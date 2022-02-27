@@ -34,7 +34,8 @@ class QuizGui:
             q_text = self.quiz.next_question()
             self.canvas.itemconfig(self.quiz_text, text=q_text)
         else:
-            self.canvas.itemconfig(self.quiz_text, text="You've reached the end of the quiz")
+            self.canvas.itemconfig(self.quiz_text, text=f"You've completed the quiz\nYour final score was:"
+                                                        f" {self.quiz.score}/{self.quiz.question_number}")
             self.true_button.config(state="disabled")
             self.false_button.config(state="disabled")
 
